@@ -12,24 +12,59 @@ public class debugPractice {
 
     public static void main(String[] args) {
 
+        // This method shows the difference between runtime and compile time errors.
+        // TODO: Uncomment the line below to call the method
+         runTimeVsCompile();
+
+        // Can you tell me what the fourth iteration of num is in this method without modifying
+        // the code? The debugger makes it easy
+        // TODO: Uncomment the line below to call the method
+        // numberLoop();
+
         // Can you find the two errors in this method? How can the scanner help
         // 1.
         // 2.
         // TODO: Uncomment the line below to call the method
-         scannerPractice();
+        // scannerPractice();
 
         // What indexing error did we make in this method? How could the debugger easily show that.
         // What happens if testString doesn't end with an exclamation mark?
         // TODO: Uncomment the line below to call the method
         String testString = "Yoooooo!!!!! That was soooooo dope!!!!!!!!!!!! OMG!!! THANKU!!!!";
         //stringDebugging(testString);
-
-        // Can you tell me what the fourth iteration of num is in this method without modifying
-        // the code? The debugger makes it easy
-        // TODO: Uncomment the line below to call the method
-        // numberLoop();
     }
 
+    /**
+     * This method shows the difference between runtime and compiler errors.
+     */
+    public static void runTimeVsCompile() {
+        // This is a compiler error, your code will not run until it is fixed.
+        System.out.println("This is a compiler error")
+
+        // This is a runtime, use your debugger to prove that your code runs until this point.
+        int num = 10 / 0;
+
+        // String Indexing Runtime Error
+        String test = "word";
+        char error = test.charAt(4);
+    }
+
+    /**
+     * This method shows how the debugger can be easily used to determine values.
+     */
+    public static void numberLoop() {
+        int num = 32;
+
+        //TODO: How can you use a break statement to incrementally move through this loop?
+        for (int i = 0; i < 10; ++i) {
+            num = num * (15 ^ 2);
+        }
+
+    }
+
+    /**
+     * This method shows potential errors that can happen when using the Scanner.
+     */
     public static void scannerPractice() {
         Scanner scnr = new Scanner(System.in);
         int num = -1;
@@ -43,7 +78,7 @@ public class debugPractice {
                 int num2 = scnr.nextInt();
             }
         }
-        System.out.println("You picked " +num);
+        System.out.println("You picked " + num);
     }
 
     /**
@@ -75,15 +110,5 @@ public class debugPractice {
         System.out.println("Corrected: " + tempStr);
     }
 
-
-    public static void numberLoop() {
-        int num = 32;
-
-        //TODO: How can you use a break statement to incrementally move through this loop?
-        for (int i = 0; i < 10; ++i) {
-            num = num * (15 ^ 2);
-        }
-
-    }
 
 }
